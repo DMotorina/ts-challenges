@@ -38,8 +38,8 @@ type MyReadonly2<T, K extends keyof T = keyof T> = {
     readonly [key in K] : T[key]
   } & {
     [P in keyof T as P extends K ? never : P] : T[P]
-  }
-  // K extends keyof T = keyof T, use "=" here mean that assign K with default value keyof T
+}
+// K extends keyof T = keyof T, use "=" here mean that assign K with default value keyof T
   
   /* _____________ Test Cases _____________ */
   import type { Alike, Expect } from '@type-challenges/utils'
